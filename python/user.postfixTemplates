@@ -1,0 +1,37 @@
+
+.for : iterate over ...
+	ANY  →  for $1::"value"$ in $expr$:\
+		$END$\
+
+.fori : iterate expr.items() ...
+	ANY  →  for $1::"key"$, $2::"value"$ in $expr$.items():\
+		$END$\
+
+.fork : iterate expr.keys() ...
+	ANY  →  for $1::"key"$ in $expr$.keys():\
+		$END$\
+
+.forv : iterate expr.values() ...
+	ANY  →  for $1::"value"$ in $expr$.values():\
+		$END$\
+
+.fore : iterate enumerate(expr) ...
+	ANY  →  for $1::"index"$, $2::"value"$ in enumerate($expr$):\
+		$END$\
+
+.foren : iterate enumerate of number ...
+	ANY  →  $1::"number"$ = len($expr$)\
+		for $2::"index"$, $3::"value"$ in enumerate($expr$):\
+			$END$\
+
+.logi : print log info
+	ANY  →  $1::"log"$.info($expr$)
+
+.logd : print log debug
+	ANY  →  $1::"log"$.debug($expr$)
+
+.loge : print log error
+	ANY  →  $1::"log"$.error($expr$)
+
+.logw : print log warning
+	ANY  →  $1::"log"$.warning($expr$)
